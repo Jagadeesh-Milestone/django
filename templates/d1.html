@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Students List</h1>
+    {% if students %}
+    <table>
+        <thead>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Course</th>
+            <th>Date of Join</th>
+            <th>Contact</th>
+        </thead>
+        {% for i in students %}
+        <tr>
+            <td>{{i.firstname}}</td>
+            <td>{{i.lastname}}</td>
+            <td>{{i.course}}</td>
+            <td>{{i.joindate}}</td>
+            <td>{{i.contact}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h1>No Data Found</h1>
+    {% endif %}
+</body>
+</html>
